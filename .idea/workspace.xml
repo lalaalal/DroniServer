@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e612d8c-42bc-45be-a407-372063e780df" name="Default Changelist" comment="" />
+    <list default="true" id="9e612d8c-42bc-45be-a407-372063e780df" name="Default Changelist" comment="Login">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lalaalal/droni/server/DroniRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lalaalal/droni/server/DroniRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lalaalal/droni/server/DroniServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lalaalal/droni/server/DroniServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lalaalal/droni/server/UnknownRequestException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lalaalal/droni/server/WrongRequestException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lalaalal/droni/server/account/LoginRespondent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lalaalal/droni/server/account/LoginRespondent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lalaalal/droni/server/account/SignUpRespondent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lalaalal/droni/server/account/SignUpRespondent.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,8 +39,13 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1RSHNWXj9Lz9mU1b9sIaVtYrFom" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
@@ -132,6 +145,10 @@
       <updated>1569653536620</updated>
     </task>
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Login" />
+    <option name="LAST_COMMIT_MESSAGE" value="Login" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/DroniServer$DroniServer.ic" NAME="DroniServer Coverage Results" MODIFIED="1569653624013" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

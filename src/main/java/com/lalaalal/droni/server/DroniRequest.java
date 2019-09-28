@@ -4,31 +4,23 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class DroniRequest {
+    public static final int TYPE_TEXT = 1;
+    public static final int TYPE_FILE = 2;
+
+    public String type;
     public String command;
-    public ArrayList<String> data;
+    public ArrayList<String> stringData;
+    public byte[] data;
 
-    public DroniRequest(ArrayList<String> data) {
-        command = data.get(0);
-        data.remove(0);
-        this.data = data;
-    }
-
-    public DroniRequest(String command, ArrayList<String> data) {
+    public DroniRequest(String type, String command, ArrayList<String> data) {
         this.command = command;
-        this.data = data;
+        this.stringData = data;
     }
 
-    public static DroniRequest parseDroniRequest(String request) {
-        String[] requestData = request.split(":");
-        ArrayList<String> data = new ArrayList<>(Arrays.asList(requestData));
-
-        return new DroniRequest(data);
-    }
-
-    public void printDroniRequest() {
+    void printDroniRequest() {
         System.out.println("Command : " + command);
-        for (int i = 0; i < data.size(); i++)
-            System.out.println("Data[" + i + "] : " + data.get(i));
+        for (int i = 0; i < stringData.size(); i++)
+            System.out.println("Data[" + i + "] : " + stringData.get(i));
         System.out.println();
     }
 }

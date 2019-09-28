@@ -1,14 +1,14 @@
 package com.lalaalal.droni.server;
 
-public class UnknownRequestException extends Exception {
+public class WrongRequestException extends Exception {
     private String command;
 
-    public UnknownRequestException(String command) {
+    public WrongRequestException(String command) {
         this.command = command;
     }
 
     @Override
     public String getMessage() {
-        return "UnknownRequest : " + command;
+        return "WrongRequest : " + command;
     }
 }

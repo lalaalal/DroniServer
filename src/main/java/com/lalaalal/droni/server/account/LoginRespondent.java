@@ -3,12 +3,14 @@ package com.lalaalal.droni.server.account;
 import com.lalaalal.droni.server.DroniRequest;
 import com.lalaalal.droni.server.MysqlClient;
 import com.lalaalal.droni.server.Respondent;
+import com.lalaalal.droni.server.WrongRequestException;
 
 import java.io.PrintWriter;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class LoginRespondent implements Respondent {
+    private static final int DATA_SIZE = 2;
     private static final int ID_INDEX = 0;
     private static final int PW_INDEX = 1;
 
@@ -18,17 +20,21 @@ public class LoginRespondent implements Respondent {
     private String requestId;
     private String requestPw;
 
-    public LoginRespondent(PrintWriter out, DroniRequest request) {
+    public LoginRespondent(PrintWriter out, DroniRequest request) throws WrongRequestException {
         this.out = out;
 
-        requestId = request.data.get(ID_INDEX);
-        requestPw = request.data.get(PW_INDEX);
+        if (request.stringData.size() != DATA_SIZE)
+            throw new WrongRequestException(request.command);
+
+        requestId = request.stringData.get(ID_INDEX);
+        requestPw = request.stringData.get(PW_INDEX);
 
         querySelectUserIdPw = "SELECT id, pw FROM user WHERE id = \"" + requestId + "\"";
     }
 
     @Override
     public void Response() {
+        out.println("TEXT");
         if (login()) {
             out.println("SUCCEED!");
         } else {
