@@ -35,6 +35,7 @@ public class SignUpRespondent implements Respondent {
 
     @Override
     public void Response() {
+        out.println("TEXT");
         if (signUp())
             out.println("SUCCEED!");
         else

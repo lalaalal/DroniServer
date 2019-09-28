@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e612d8c-42bc-45be-a407-372063e780df" name="Default Changelist" comment="Login">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lalaalal/droni/server/account/UserDataRespondent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lalaalal/droni/server/DroniRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lalaalal/droni/server/DroniRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lalaalal/droni/server/DroniServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lalaalal/droni/server/DroniServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lalaalal/droni/server/UnknownRequestException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lalaalal/droni/server/WrongRequestException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lalaalal/droni/server/account/LoginRespondent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lalaalal/droni/server/account/LoginRespondent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lalaalal/droni/server/account/SignUpRespondent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lalaalal/droni/server/account/SignUpRespondent.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -145,6 +143,17 @@
       <updated>1569653536620</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Login" />

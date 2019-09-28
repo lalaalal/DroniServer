@@ -2,6 +2,7 @@ package com.lalaalal.droni.server;
 
 import com.lalaalal.droni.server.account.LoginRespondent;
 import com.lalaalal.droni.server.account.SignUpRespondent;
+import com.lalaalal.droni.server.account.UserDataRespondent;
 
 import java.io.*;
 import java.net.ServerSocket;
@@ -28,8 +29,6 @@ public class DroniServer implements Runnable {
         out = new PrintWriter(client.getOutputStream(), true);
         inputStream = client.getInputStream();
         outputStream = client.getOutputStream();
-
-        in.useDelimiter(";");
     }
 
     public static void main(String[] args) throws IOException {
@@ -61,7 +60,10 @@ public class DroniServer implements Runnable {
             return new LoginRespondent(out, request);
         } else if (request.command.equals("SIGN_UP")) {
             return new SignUpRespondent(out, request);
-        } else {
+        } else if (request.command.equals("USER_DATA")) {
+            return new UserDataRespondent(out, request);
+        }
+        else {
             throw new WrongRequestException(request.command);
         }
     }
