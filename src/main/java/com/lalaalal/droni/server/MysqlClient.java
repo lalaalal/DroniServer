@@ -1,10 +1,13 @@
 package com.lalaalal.droni.server;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 
 public class MysqlClient {
     private static final String DBName = "droni";
-    private static final String TARGET_URL = "jdbc:mysql://mysql.isdj.ml/" + DBName;
+    private static final String TARGET_URL = "jdbc:mysql://127.0.0.1/" + DBName;
     private static final String USER = "droni";
     private static final String PASSWORD = "HelloDrone!5110";
 

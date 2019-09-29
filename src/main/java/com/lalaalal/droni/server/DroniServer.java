@@ -3,8 +3,13 @@ package com.lalaalal.droni.server;
 import com.lalaalal.droni.server.account.LoginRespondent;
 import com.lalaalal.droni.server.account.SignUpRespondent;
 import com.lalaalal.droni.server.account.UserDataRespondent;
+import com.lalaalal.droni.server.airfield.AirFieldHandler;
+import com.lalaalal.droni.server.airfield.AirFieldRespondent;
 
-import java.io.*;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
@@ -22,6 +27,8 @@ public class DroniServer implements Runnable {
     private InputStream inputStream;
     private OutputStream outputStream;
 
+    static ArrayList<AirFieldHandler> airFieldHandlers;
+
     private DroniServer(Socket client) throws IOException {
         this.client = client;
 
@@ -34,6 +41,18 @@ public class DroniServer implements Runnable {
     public static void main(String[] args) throws IOException {
         ServerSocket serverSocket = new ServerSocket(SERVER_PORT);
         ExecutorService pool = Executors.newFixedThreadPool(500);
+
+        airFieldHandlers = new ArrayList<>();
+
+        AirFieldHandler gwang = new AirFieldHandler("광나루");
+        gwang.setStatusAt(4, 1, true);
+        gwang.setStatusAt(4, 3, true);
+        gwang.setStatusAt(4, 4, true);
+        gwang.setStatusAt(4, 7, true);
+
+        airFieldHandlers.add(gwang);
+        airFieldHandlers.add(new AirFieldHandler("신정"));
+
 
         while(true) {
             pool.execute(new DroniServer(serverSocket.accept()));
@@ -62,6 +81,8 @@ public class DroniServer implements Runnable {
             return new SignUpRespondent(out, request);
         } else if (request.command.equals("USER_DATA")) {
             return new UserDataRespondent(out, request);
+        } else if (request.command.equals("AIRFIELD")) {
+            return new AirFieldRespondent(out, request, airFieldHandlers);
         }
         else {
             throw new WrongRequestException(request.command);

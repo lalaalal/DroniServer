@@ -8,7 +8,7 @@ import com.lalaalal.droni.server.WrongRequestException;
 import java.io.PrintWriter;
 
 public class SignUpRespondent implements Respondent {
-    private static final int DATA_SIZE = 2;
+    private static final int DATA_SIZE = 6;
 
     private static final int ID_INDEX = 0;
     private static final int PW_INDEX = 1;
@@ -30,7 +30,18 @@ public class SignUpRespondent implements Respondent {
         requestPw = request.stringData.get(PW_INDEX);
 
         querySelectUserId = "SELECT id FROM user WHERE id = \"" + requestId + "\"";
-        queryInsertUser = "INSERT INTO user VALUES (\"" + requestId + "\", \"" + requestPw + "\")";
+
+        StringBuilder insertQuery = new StringBuilder();
+        insertQuery.append("INSERT INTO user VALUES (");
+        for (int i = 0; i < DATA_SIZE; i++) {
+            insertQuery.append("\"");
+            insertQuery.append(request.stringData.get(i));
+            insertQuery.append("\", ");
+        }
+        insertQuery.delete(insertQuery.length() - 2, insertQuery.length());
+        insertQuery.append(")");
+
+        queryInsertUser = insertQuery.toString();
     }
 
     @Override
