@@ -6,28 +6,46 @@ public class AirFieldHandler {
 
     private String fieldName;
     private boolean[][] fpvTable;
+    private int djiDrone;
 
     public AirFieldHandler(String name) {
         fpvTable = new boolean[BAND_NUM][CHANNEL_NUM];
+        djiDrone = 0;
         fieldName = name;
     }
 
-    public boolean getStatusAt(int band, int channel)  {
+    boolean setDjiDrone(int value) {
+        if (djiDrone + value < 3 && djiDrone + value >= 0) {
+            djiDrone += value;
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    boolean getStatusAt(int band, int channel)  {
         if (!checkRange(band, channel))
             throw new IndexOutOfBoundsException();
 
         return fpvTable[band][channel];
     }
 
-    public String getFieldName() {
+    String getFieldName() {
         return fieldName;
     }
 
-    public void setStatusAt(int band, int channel, boolean value) throws IndexOutOfBoundsException {
+    public boolean setStatusAt(int band, int channel, boolean value) throws IndexOutOfBoundsException {
         if (!checkRange(band, channel))
             throw new IndexOutOfBoundsException();
+        if (fpvTable[band][channel])
+            return false;
 
         fpvTable[band][channel] = value;
+        return true;
+    }
+
+    int getDjiDrone() {
+        return djiDrone;
     }
 
     private boolean checkRange(int band, int channel) {

@@ -36,23 +36,38 @@ public class AirFieldRespondent implements Respondent {
     @Override
     public void Response() {
         out.println("TEXT");
-        if (command.equals("SET_USE")) {
-            airFieldHandler.setStatusAt(band, channel, true);
-            out.println("SUCCEED!");
-        } else if (command.equals("SET_NOT_USE")) {
-            airFieldHandler.setStatusAt(band, channel, false);
-            out.println("SUCCEED!");
-        } else if (command.equals("GET")) {
-            for (int i = 0; i < AirFieldHandler.BAND_NUM; i++) {
-                for (int j = 0; j < AirFieldHandler.CHANNEL_NUM; j++) {
-                    out.print(airFieldHandler.getStatusAt(i, j));
-                    out.print(":");
+        String res;
+        switch (command) {
+            case "SET_USE":
+                 res = Boolean.toString(airFieldHandler.setStatusAt(band, channel, true));
+                break;
+            case "SET_NOT_USE":
+                res = Boolean.toString(airFieldHandler.setStatusAt(band, channel, false));
+                break;
+            case "SET_DJI_USE":
+                res = Boolean.toString(airFieldHandler.setDjiDrone(1));
+                break;
+            case "SET_DJI_NOT_USE":
+                res = Boolean.toString(airFieldHandler.setDjiDrone(-1));
+                break;
+            case "GET":
+                StringBuilder stringBuilder = new StringBuilder();
+                for (int i = 0; i < AirFieldHandler.BAND_NUM; i++) {
+                    for (int j = 0; j < AirFieldHandler.CHANNEL_NUM; j++) {
+                        stringBuilder.append(airFieldHandler.getStatusAt(i, j));
+                        stringBuilder.append(":");
+                    }
                 }
-            }
-            out.println();
-        } else {
-            out.println("FAILED!");
+                stringBuilder.append(airFieldHandler.getDjiDrone());
+                stringBuilder.append("\n");
+                res = stringBuilder.toString();
+                break;
+            default:
+                res = Boolean.toString(false);
+                break;
         }
+
+        out.println(res);
     }
 
     private AirFieldHandler findAirFieldHandlerByName(ArrayList<AirFieldHandler> airFieldHandlers) {
