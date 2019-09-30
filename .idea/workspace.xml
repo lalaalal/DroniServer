@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e612d8c-42bc-45be-a407-372063e780df" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lalaalal/droni/server/airfield/AirFieldHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lalaalal/droni/server/airfield/AirFieldHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lalaalal/droni/server/airfield/AirFieldRespondent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lalaalal/droni/server/airfield/AirFieldRespondent.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -149,7 +146,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569693018474</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add Dji Drone">
+      <created>1569813531193</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1569813531193</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -168,7 +172,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Login" />
     <MESSAGE value="Get UserData" />
-    <option name="LAST_COMMIT_MESSAGE" value="Get UserData" />
+    <MESSAGE value="Add Dji Drone" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Dji Drone" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

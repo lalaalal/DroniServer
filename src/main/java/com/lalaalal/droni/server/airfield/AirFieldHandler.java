@@ -37,7 +37,7 @@ public class AirFieldHandler {
     public boolean setStatusAt(int band, int channel, boolean value) throws IndexOutOfBoundsException {
         if (!checkRange(band, channel))
             throw new IndexOutOfBoundsException();
-        if (fpvTable[band][channel])
+        if (fpvTable[band][channel] == value)
             return false;
 
         fpvTable[band][channel] = value;
